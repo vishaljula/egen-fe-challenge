@@ -1,0 +1,43 @@
+<h3 style="display: inline-block">{{message2}}</h3>
+<div class="pull-right">
+  <button style="background-color: rgb(225, 225, 225); margin-top:0px; border: 2px solid #ff6600; color: #ff6600" ng-click="goToMain()"><i class="fa fa-chevron-left" style="font-size:18px">&nbsp;Back</i></button>
+</div>
+<div class="table-responsive">
+  <div class="row">
+    <div class="col-xs-6">
+      <form role="form">
+        <div class="form-group  col-md-12">
+          <label for="name">Name</label>
+        </div>
+        <div class="form-group  col-md-12">
+          <p>{{user.firstName + " " +  user.lastName}}</p>
+        </div>
+        <div class="form-group col-md-12">
+          <label for="email">Email</label>
+        </div>
+        <div class="form-group  col-md-12">
+          <p>{{user.email}}</p>
+        </div>
+        <div class="form-group col-md-12">
+          <label for="address">Address</label>
+        </div>
+        <div class="form-group  col-md-12">
+          <p>{{user.address.street + ","}}</p>
+          <p>{{user.address.city + ", " + user.address.state + ", " + user.address.country + ", " + user.address.zip}}</p>
+        </div>
+        <div class="form-group col-md-12">
+          <label for="company">Company</label>
+        </div>
+        <div class="form-group  col-md-12">
+          <p>{{user.company.name}} <a href="{{user.company.website}}">{{user.company.website}}</a></p>
+        </div>
+        <div class="form-group col-md-12">
+          <button class="btn btn-default" ng-click="remove(user._id)">Delete User</button>
+        </div>
+      </form>
+    </div>
+    <div class="col-xs-6 container">
+      <img src="{{user.profilePic}}" alt="Cinque Terre" width="404" height="336" style="border: 2px solid #ff6600; margin-top:20px;"> 
+    </div>
+  </div>
+</div>

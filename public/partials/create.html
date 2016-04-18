@@ -1,0 +1,66 @@
+<h3 style="display: inline-block">{{message3}}</h3>
+<div class="pull-right">
+  <button style="background-color: rgb(225, 225, 225); margin-top:0px; border: 2px solid #ff6600; color: #ff6600" ng-click="goToMain()"><i class="fa fa-chevron-left" style="font-size:18px">&nbsp;Back</i></button>
+</div>
+<div class="table-responsive">
+  <form role="form" id="userForm" name="userForm">
+    <div class="form-group  col-md-6">
+      <label for="firstName">First Name</label>
+      <input type="text" class="form-control" id="firstName" name="firstName" placeholder="First Name" ng-model="user.firstName" required>
+    </div>
+    <div class="form-group col-md-6">
+      <label for="lastName">Last Name</label>
+      <input type="text" class="form-control" id="lastName" name="lastName" placeholder="Last Name" ng-model="user.lastName" required>
+    </div>
+    <div class="form-group col-md-12" ng-class="{'has-error': userForm.email.$invalid &&
+                                                              userForm.email.$invalid }">
+      <label for="email">Email</label>
+      <input type="email" class="form-control" id="email" name="email" placeholder="Email" ng-model="user.email" required>
+      <span class = "help-block has-error"
+            ng-if= "userForm.email.$dirty"
+            ng-messages = "userForm.email.$error">
+            <span ng-message="required">
+              Email Address is required
+            </span>
+            <span ng-message="email">
+              Email must be a valid email address
+            </span>
+      </span>
+    </div>
+    <div class="form-group col-md-6">
+      <label for="streetAddress">Street Address</label>
+      <input type="text" class="form-control" id="streetAddress" name="streetAddress" placeholder="Street Address" ng-model="user.address.street" required>
+    </div>
+    <div class="form-group col-md-6">
+      <label for="city">City</label>
+      <input type="text" class="form-control" id="city" name="city" placeholder="City" ng-model="user.address.city" required>
+    </div>
+    <div class="form-group col-md-6">
+      <label for="zip">Zip</label>
+      <input type="number" class="form-control" id="zip" name="zip" placeholder="Zip" ng-model="user.address.zip" required>
+    </div>
+    <div class="form-group col-md-6">
+      <label for="state">State</label>
+      <input type="text" class="form-control" id="state" name="state" placeholder="State" ng-model="user.address.state" required>
+    </div>
+    <div class="form-group col-md-6">
+      <label for="country">Country</label>
+      <input type="text" class="form-control" id="country" name="country" placeholder="Country" ng-model="user.address.country" required>
+    </div>
+    <div class="form-group col-md-6">
+      <label for="company">Company</label>
+      <input type="text" class="form-control" id="company" name="company" placeholder="Company" ng-model="user.company.name" required>
+    </div>
+    <div class="form-group col-md-12">
+      <label for="website">Website</label>
+      <input type="text" class="form-control" id="website" name="website" placeholder="Website" ng-model="user.company.website" required>
+    </div>
+    <div class="form-group col-md-12">
+      <label for="profilePic">Profle Picture</label>
+      <input type="text" class="form-control" id="profilePic" name="profilePic" placeholder="Profile Picture" ng-model="user.profilePic" required>
+    </div>
+    <div class="form-group col-md-3">
+      <button type="submit" class="btn btn-default" ng-click="addUser()">Add</button>
+    </div>
+  </form>
+</div>
